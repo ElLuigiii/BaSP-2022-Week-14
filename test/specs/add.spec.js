@@ -24,5 +24,4 @@ describe ('intentando continuar', ()=>{
     it ('go to MainPage',  async ()=>{
         await MainPage.goToBack()
         await expect(browser).toHaveUrl('https://www.saucedemo.com/inventory.html')
-    })
-})
+    })})

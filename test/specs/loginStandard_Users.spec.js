@@ -69,5 +69,4 @@ describe ('prueba de login page', ()=> {
     it ('GO TO CART', async ()=>{
         await LoginPage.Cart.click()
         await expect(browser).toHaveUrl('https://www.saucedemo.com/cart.html')
-    })
-})
+    })})
