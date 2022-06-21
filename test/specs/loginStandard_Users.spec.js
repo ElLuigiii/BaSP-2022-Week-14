@@ -5,7 +5,7 @@ describe ('prueba de login page', ()=> {
     beforeAll( 'open browser', ()=> {
         browser.url('https://www.saucedemo.com/')
     })
-    it( 'response status', async ()=> {
+    it( 'check browser', async ()=> {
         await browser.url('https://www.saucedemo.com/')
         await expect(browser).toHaveUrl('https://www.saucedemo.com/')
     } )
@@ -37,16 +37,34 @@ describe ('prueba de login page', ()=> {
         await LoginPage.selectFifthProduct()
         await expect(LoginPage.Cart).toHaveText('5')
     })
+     /***********************
+     CONFIGURAR SELECTOR DEL 6TO PRODUCTO
+     **********************/
     // it('select sixth product', async ()=>{
     //     await LoginPage.selectSixthProduct()
     //     await expect(LoginPage.Cart).toHaveText('6')
     // })
-    /***********************
-     CONFIGURAR SELECTOR DEL 6TO PRODUCTO
-     **********************/
-    it('remove product to cart in homepage', async() =>{
+
+
+    it('remove first product to cart in homepage', async() =>{
         await LoginPage.firstRemove.click()
         await expect(LoginPage.Cart).toHaveText('4')
+    })
+    it ('remove second product to cart', async ()=>{
+        await LoginPage.secondRemove.click()
+        await expect(LoginPage.Cart).toHaveText('3')
+    })
+    it ('remove third product to cart', async ()=>{
+        await LoginPage.thirdRemove.click()
+        await expect(LoginPage.Cart).toHaveText('2')
+    })
+    it ('remove fourth product to cart', async ()=>{
+        await LoginPage.fourthRemove.click()
+        await expect(LoginPage.Cart).toHaveText('1')
+    })
+    it ('remove fifth product to cart', async ()=>{
+        await LoginPage.fifthRemove.click()
+        await expect(LoginPage.Cart).toHaveText('')
     })
     it ('GO TO CART', async ()=>{
         await LoginPage.Cart.click()

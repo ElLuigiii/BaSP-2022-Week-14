@@ -15,6 +15,10 @@ class LoginPage {
     get fifthProduct() { return $('#add-to-cart-sauce-labs-onesie')}
     get sixthProduct () { return $('#add-to-cart-test\.allthethings\(\)-t-shirt-\(red\)')} 
     get firstRemove () { return $('#remove-sauce-labs-backpack')}
+    get secondRemove() { return $('#remove-sauce-labs-bike-light')}
+    get thirdRemove() { return $('#remove-sauce-labs-bolt-t-shirt')}
+    get fourthRemove () { return $('#remove-sauce-labs-fleece-jacket')}
+    get fifthRemove () {return $('#remove-sauce-labs-onesie')}
     //setters
     async setUserName(username) {
         await this.inputUserName.setValue(username)
