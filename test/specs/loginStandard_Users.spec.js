@@ -66,7 +66,7 @@ describe ('test of the login page Standar user', ()=> {
          await LoginPage.Cart.click()
          await expect(browser).toHaveUrl('https://www.saucedemo.com/cart.html')
      })
-     it('click en el boton menu', async ()=>{
+     it('Click in logout', async ()=>{
         await MainPage.btnMainMenu.click()
         await MainPage.clickLogout()
         await expect(browser).toHaveUrl('https://www.saucedemo.com/')

@@ -6,7 +6,7 @@ describe ('Purchasing process', ()=>{
         browser.url('https://www.saucedemo.com/')
     })
     it('Logging', async ()=>{
-        await LoginPage.login('problem_user', 'secret_sauce')
+        await LoginPage.login('performance_glitch_user', 'secret_sauce')
         expect(browser).toHaveUrl('https://www.saucedemo.com/')
     })
     it ('View the first product', async ()=>{
