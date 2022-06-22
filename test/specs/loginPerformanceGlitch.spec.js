@@ -2,20 +2,18 @@
 import LoginPage from '../pageobjects/login.page'
 import MainPage from '../pageobjects/main.page'
 
-describe ('test of the login page Standar user', ()=> {
-    beforeAll( 'open browser', ()=> {
-        browser.url('https://www.saucedemo.com/')
-    })
+describe ('test of the login page Glitch', ()=> {
+    let originalTimeout;
+    beforeEach(() => {
+      originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
+      jasmine.DEFAULT_TIMEOUT_INTERVAL = 6000;
+    });
     it( 'check browser', async ()=> {
         await browser.url('https://www.saucedemo.com/')
         await expect(browser).toHaveUrl('https://www.saucedemo.com/')
     } )
-    it('Login error', async ()=>{
-        await LoginPage.login('standard_use','secret_sauce')
-        expect(LoginPage.ErrContainer).toHaveText('Epic sadface: Username and password do not match any user in this service')
-        })
     it ('login succesfull' , async ()=> {
-        await LoginPage.login('standard_user', 'secret_sauce')
+        await LoginPage.login('performance_glitch_user', 'secret_sauce')
         expect(browser).toHaveUrl('https://www.saucedemo.com/inventory.html')
     })
     it('Select product ', async ()=>{
@@ -71,4 +69,7 @@ describe ('test of the login page Standar user', ()=> {
         await MainPage.clickLogout()
         await expect(browser).toHaveUrl('https://www.saucedemo.com/')
      })
+     afterEach(() => {
+        jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout;
+    });
 })

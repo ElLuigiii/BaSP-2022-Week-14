@@ -13,7 +13,7 @@ class LoginPage {
     get btnLogout () { return $('#logout_sidebar_link')} //btn logout
     get fourthProduct () { return $('#add-to-cart-sauce-labs-fleece-jacket')}
     get fifthProduct() { return $('#add-to-cart-sauce-labs-onesie')}
-    get sixthProduct () { return $('#add-to-cart-test\.allthethings\(\)-t-shirt-\(red\)')} 
+    get sixthProduct () { return $('//*[@id="add-to-cart-test.allthethings()-t-shirt-(red)"]')}
     get firstRemove () { return $('#remove-sauce-labs-backpack')}
     get secondRemove() { return $('#remove-sauce-labs-bike-light')}
     get thirdRemove() { return $('#remove-sauce-labs-bolt-t-shirt')}

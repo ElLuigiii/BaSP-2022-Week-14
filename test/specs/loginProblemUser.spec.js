@@ -1,8 +1,7 @@
+import LoginPage from "../pageobjects/login.page";
+import MainPage from "../pageobjects/main.page";
 
-import LoginPage from '../pageobjects/login.page'
-import MainPage from '../pageobjects/main.page'
-
-describe ('test of the login page Standar user', ()=> {
+describe ('test of the login page Problem user', ()=> {
     beforeAll( 'open browser', ()=> {
         browser.url('https://www.saucedemo.com/')
     })
@@ -15,7 +14,7 @@ describe ('test of the login page Standar user', ()=> {
         expect(LoginPage.ErrContainer).toHaveText('Epic sadface: Username and password do not match any user in this service')
         })
     it ('login succesfull' , async ()=> {
-        await LoginPage.login('standard_user', 'secret_sauce')
+        await LoginPage.login('problem_user', 'secret_sauce')
         expect(browser).toHaveUrl('https://www.saucedemo.com/inventory.html')
     })
     it('Select product ', async ()=>{
